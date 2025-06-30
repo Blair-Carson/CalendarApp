@@ -1,0 +1,88 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="WindowBackgroundColor" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="MainBackgroundColor" Color="White"/>
+    <SolidColorBrush x:Key="MonthBlockBackgroundColor" Color="WhiteSmoke"/>
+
+    <SolidColorBrush x:Key="PrimaryTextColor" Color="Black"/>
+    <SolidColorBrush x:Key="HeaderTextColor" Color="Navy"/>
+    <SolidColorBrush x:Key="DayNumberTextColor" Color="Black"/>
+    <SolidColorBrush x:Key="DayHeaderTextColor" Color="#333333"/>
+    <SolidColorBrush x:Key="MiniCalendarDayTextColor" Color="#333333"/>
+
+    <SolidColorBrush x:Key="ButtonBackground" Color="#E0E0E0"/>
+    <SolidColorBrush x:Key="ButtonForeground" Color="Black"/>
+    <SolidColorBrush x:Key="ButtonHoverBackground" Color="#D0D0D0"/>
+
+    <SolidColorBrush x:Key="TodayHighlightColor" Color="LightBlue"/>
+
+    <SolidColorBrush x:Key="BorderColor" Color="#CCCCCC"/>
+
+    <Style TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource WindowBackgroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style TargetType="Grid">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="BaseTextStyle">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style x:Key="DayHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource DayHeaderTextColor}"/>
+    </Style>
+
+    <Style x:Key="DayNumberStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Foreground" Value="{StaticResource DayNumberTextColor}"/>
+    </Style>
+
+    <Style x:Key="MiniCalendarDayStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="1"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Foreground" Value="{StaticResource MiniCalendarDayTextColor}"/>
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource ButtonForeground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ButtonHoverBackground}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
+                            <Setter Property="Opacity" Value="0.8"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
