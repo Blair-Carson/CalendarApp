@@ -16,9 +16,10 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <Button x:Name="btnPrev" Content="&lt;" Margin="10" Click="btnPrev_Click"/>
 
-            <Button x:Name="btnToggleView" Content="Year View" Margin="10" Click="btnToggleView_Click"/>
+            <Button x:Name="btnToggleView" Content="Year View" Margin="5, 5, 50, 5" Click="btnToggleView_Click"/>
+            
+            <Button x:Name="btnPrev" Content="&lt;" Margin="5" Click="btnPrev_Click"/>
 
             <TextBlock x:Name="txtMonthYear" Text="Month Year" FontSize="16" VerticalAlignment="Center" Margin="5" MinWidth="150" TextAlignment="Center"
                Foreground="{DynamicResource HeaderTextColor}"/>

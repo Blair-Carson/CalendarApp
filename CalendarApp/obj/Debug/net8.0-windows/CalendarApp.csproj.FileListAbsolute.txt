@@ -20,3 +20,4 @@ C:\Users\TRD\source\repos\CalendarApp\CalendarApp\obj\Debug\net8.0-windows\refin
 C:\Users\TRD\source\repos\CalendarApp\CalendarApp\obj\Debug\net8.0-windows\CalendarApp.pdb
 C:\Users\TRD\source\repos\CalendarApp\CalendarApp\obj\Debug\net8.0-windows\CalendarApp.genruntimeconfig.cache
 C:\Users\TRD\source\repos\CalendarApp\CalendarApp\obj\Debug\net8.0-windows\ref\CalendarApp.dll
+C:\Users\TRD\source\repos\CalendarApp\CalendarApp\obj\Debug\net8.0-windows\CalendarApp.sourcelink.json

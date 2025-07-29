@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\TRD\\source\\repos\\CalendarApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3359709E-6E6D-490B-A289-597C0B97B892}|CalendarApp\\CalendarApp.csproj|c:\\users\\trd\\source\\repos\\calendarapp\\calendarapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3359709E-6E6D-490B-A289-597C0B97B892}|CalendarApp\\CalendarApp.csproj|solutionrelative:calendarapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3359709E-6E6D-490B-A289-597C0B97B892}|CalendarApp\\CalendarApp.csproj|c:\\users\\trd\\source\\repos\\calendarapp\\calendarapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{3359709E-6E6D-490B-A289-597C0B97B892}|CalendarApp\\CalendarApp.csproj|solutionrelative:calendarapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3359709E-6E6D-490B-A289-597C0B97B892}|CalendarApp\\CalendarApp.csproj|c:\\users\\trd\\source\\repos\\calendarapp\\calendarapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3359709E-6E6D-490B-A289-597C0B97B892}|CalendarApp\\CalendarApp.csproj|solutionrelative:calendarapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3359709E-6E6D-490B-A289-597C0B97B892}|CalendarApp\\CalendarApp.csproj|c:\\users\\trd\\source\\repos\\calendarapp\\calendarapp\\themes\\darktheme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\TRD\\source\\repos\\CalendarApp\\CalendarApp\\MainWindow.xaml",
               "RelativeDocumentMoniker": "CalendarApp\\MainWindow.xaml",
@@ -119,16 +119,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\TRD\\source\\repos\\CalendarApp\\CalendarApp\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "CalendarApp\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\TRD\\source\\repos\\CalendarApp\\CalendarApp\\MainWindow.xaml.cs",
               "RelativeToolTip": "CalendarApp\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAK8AAAAAAAAAAAAwwO8AAABPAAAA",
+              "ViewState": "AQIAAOEAAAAAAAAAAAAIwPsAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T12:52:56.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T12:52:56.239Z"
             },
             {
               "$type": "Document",
