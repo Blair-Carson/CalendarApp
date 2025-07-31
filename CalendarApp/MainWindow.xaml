@@ -21,7 +21,7 @@
             
             <Button x:Name="btnPrev" Content="&lt;" Margin="5" Click="btnPrev_Click"/>
 
-            <TextBlock x:Name="txtMonthYear" Text="Month Year" FontSize="16" VerticalAlignment="Center" Margin="5" MinWidth="150" TextAlignment="Center"
+            <TextBlock x:Name="txtMonthYear" Text="Month Year" FontSize="24" VerticalAlignment="Center" Margin="5" MinWidth="150" TextAlignment="Center"
                Foreground="{DynamicResource HeaderTextColor}"/>
 
             <Button x:Name="btnNext" Content="&gt;" Margin="5" Click="btnNext_Click"/>
