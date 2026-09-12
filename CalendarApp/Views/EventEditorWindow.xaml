@@ -1,0 +1,159 @@
+<Window x:Class="CalendarApp.Views.EventEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding WindowTitle}"
+        Width="470"
+        SizeToContent="Height"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="Display"
+        FontFamily="{DynamicResource UiFont}"
+        Background="{DynamicResource AppBackgroundBrush}"
+        Foreground="{DynamicResource PrimaryTextBrush}">
+
+    <Window.Resources>
+        <!-- A colour swatch in the picker row. -->
+        <DataTemplate x:Key="ColourSwatchTemplate">
+            <Border Width="26"
+                    Height="26"
+                    Margin="0,0,7,0"
+                    CornerRadius="13"
+                    Background="{Binding Converter={StaticResource ColorKeyToBrush}}"/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <StackPanel Margin="22,20,22,18">
+
+        <TextBlock Text="Title" Style="{StaticResource FieldLabelTextStyle}"/>
+        <TextBox x:Name="TitleBox"
+                 Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
+                 MaxLength="120"/>
+
+        <CheckBox Content="All day" Margin="0,16,0,0" IsChecked="{Binding IsAllDay, Mode=TwoWay}"/>
+
+        <Grid Margin="0,16,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="155"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Starts" Style="{StaticResource FieldLabelTextStyle}"/>
+            <TextBlock Grid.Row="0"
+                       Grid.Column="2"
+                       Text="Time"
+                       Style="{StaticResource FieldLabelTextStyle}"
+                       Visibility="{Binding ShowTimes, Converter={StaticResource BoolToVisibility}}"/>
+
+            <DatePicker Grid.Row="1" Grid.Column="0" SelectedDate="{Binding StartDate, Mode=TwoWay}"/>
+            <ComboBox Grid.Row="1"
+                      Grid.Column="2"
+                      IsEditable="True"
+                      ItemsSource="{Binding TimeOptions}"
+                      Text="{Binding StartTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding ShowTimes, Converter={StaticResource BoolToVisibility}}"/>
+
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Text="Ends"
+                       Style="{StaticResource FieldLabelTextStyle}"
+                       Margin="0,14,0,5"/>
+            <TextBlock Grid.Row="2"
+                       Grid.Column="2"
+                       Text="Time"
+                       Style="{StaticResource FieldLabelTextStyle}"
+                       Margin="0,14,0,5"
+                       Visibility="{Binding ShowTimes, Converter={StaticResource BoolToVisibility}}"/>
+
+            <DatePicker Grid.Row="3" Grid.Column="0" SelectedDate="{Binding EndDate, Mode=TwoWay}"/>
+            <ComboBox Grid.Row="3"
+                      Grid.Column="2"
+                      IsEditable="True"
+                      ItemsSource="{Binding TimeOptions}"
+                      Text="{Binding EndTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding ShowTimes, Converter={StaticResource BoolToVisibility}}"/>
+        </Grid>
+
+        <TextBlock Text="Colour" Style="{StaticResource FieldLabelTextStyle}" Margin="0,18,0,5"/>
+        <ListBox ItemsSource="{Binding ColorKeys}"
+                 SelectedItem="{Binding ColorKey, Mode=TwoWay}"
+                 ItemTemplate="{StaticResource ColourSwatchTemplate}"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 Padding="0">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border x:Name="Ring"
+                                        CornerRadius="16"
+                                        Padding="3"
+                                        BorderThickness="2"
+                                        BorderBrush="Transparent">
+                                    <ContentPresenter/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Ring"
+                                                Property="BorderBrush"
+                                                Value="{DynamicResource StrongBorderBrush}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Ring"
+                                                Property="BorderBrush"
+                                                Value="{DynamicResource AccentBrush}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+
+        <TextBlock Text="Notes" Style="{StaticResource FieldLabelTextStyle}" Margin="0,18,0,5"/>
+        <TextBox Text="{Binding Notes, UpdateSourceTrigger=PropertyChanged}"
+                 Height="82"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalContentAlignment="Top"
+                 VerticalScrollBarVisibility="Auto"/>
+
+        <Border Margin="0,16,0,0"
+                Padding="11,8"
+                CornerRadius="8"
+                Background="{DynamicResource AccentSoftBrush}"
+                Visibility="{Binding HasError, Converter={StaticResource BoolToVisibility}}">
+            <TextBlock Text="{Binding ErrorMessage}"
+                       TextWrapping="Wrap"
+                       FontSize="12.5"
+                       Foreground="{DynamicResource DangerBrush}"/>
+        </Border>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Cancel" MinWidth="92" IsCancel="True"/>
+            <Button Content="Save"
+                    MinWidth="92"
+                    Margin="10,0,0,0"
+                    IsDefault="True"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Click="Save_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

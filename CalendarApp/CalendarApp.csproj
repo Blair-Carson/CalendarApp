@@ -1,24 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>CalendarApp</RootNamespace>
+    <AssemblyName>CalendarApp</AssemblyName>
     <ApplicationIcon>Calendario-Icono-Digital.ico</ApplicationIcon>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Calendario-Icono-Digital.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Calendario-Icono-Digital.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Themes\" />
-  </ItemGroup>
 
 </Project>

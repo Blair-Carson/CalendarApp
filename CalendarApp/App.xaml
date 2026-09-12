@@ -1,9 +1,22 @@
-﻿<Application x:Class="CalendarApp.App"
+<Application x:Class="CalendarApp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CalendarApp"
-             StartupUri="MainWindow.xaml">
+             xmlns:converters="clr-namespace:CalendarApp.Converters">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--
+                    Slot 0 is the palette and is swapped at runtime by ThemeManager.
+                    Keep it first; ThemeManager addresses it by index.
+                -->
+                <ResourceDictionary Source="Themes/Palette.Light.xaml"/>
+                <ResourceDictionary Source="Themes/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:HexToBrushConverter x:Key="HexToBrush"/>
+            <converters:ColorKeyToBrushConverter x:Key="ColorKeyToBrush"/>
+            <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibility"/>
+            <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
